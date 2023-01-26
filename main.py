@@ -39,11 +39,14 @@ for links in soup.find_all('span', class_='naslov'):
 print(descs)
 
 
-#Dict
+#Dict CSV?
 
-list_dict = {'Product': products, 'PriceMP': pricesM, 'PriceVP': pricesK}
-print(len(products), len(pricesM), len(pricesK))
+list_dict = {'Product': products, 'PriceMP': pricesM, 'PriceVP': pricesK, 'Descrpiton': descs}
+print(len(products), len(pricesM), len(pricesK), len(descs))
 
 game = pd.DataFrame.from_dict(list_dict, orient='index')
 games = game.transpose()
-games.head(3)
+games.head(4)
+
+games.to_csv('list.csv', index=False, header=True)
+descs = pd.read_csv('list.csv', lineterminator='\n')
