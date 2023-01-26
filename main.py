@@ -41,12 +41,12 @@ print(descs)
 
 #Dict CSV?
 
-list_dict = {'Product': products, 'PriceMP': pricesM, 'PriceVP': pricesK, 'Descrpiton': descs}
+list_dict = {'Product': products, 'Price Credit': pricesM, 'Price Cash': pricesK, 'Descripiton': descs}
 print(len(products), len(pricesM), len(pricesK), len(descs))
 
-game = pd.DataFrame.from_dict(list_dict, orient='index')
-games = game.transpose()
-games.head(4)
+asdf = pd.DataFrame.from_dict(list_dict, orient='index')
+asdfs = asdf.transpose()
+asdfs.head(4)
 
-games.to_csv('list.csv', index=False, header=True)
+asdfs.to_csv('list.csv', index=False, header=True)
 descs = pd.read_csv('list.csv', lineterminator='\n')
